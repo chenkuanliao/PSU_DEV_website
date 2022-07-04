@@ -10,10 +10,15 @@
 }
 
 .terminal-content{
-    height: 100%;
-    overflow:auto hidden;
+    height: 90%;
+    overflow:auto;
     font-size: 20px;
 }
+
+terminal-content::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
 
 .user_input{
     background-color: transparent;
@@ -39,7 +44,7 @@ html {
 }
 
 body{
-    height: 100vh;
+    height: 85vh;
 }
 
 .column{
