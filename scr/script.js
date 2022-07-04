@@ -7,9 +7,9 @@ function execute(input){
     let output;
     input = input.toLowerCase();
 
-    output = `<div>➜ ${input}</div>`;
+    output = `<div>➜ <span class="command">${input}</span></div>`;
     if(!COMMANDS.hasOwnProperty(input)){
-        output += `<div class="output"> No such command: ${input} </div>`;
+        output += `<div><span class="output command"> No such command:</span> "${input} "</div>`;
     }
     else{
         output += `<div class="output"> ${COMMANDS[input]} </div>`;
@@ -35,13 +35,13 @@ const key = function keyEvent(e) {
 
 const COMMANDS = {
     help:
-      'Supported commands: ["about", "experience", "education", "skills", "contact"]',
+      'Supported commands: [ "<span class="command-keyword">about</span>", "<span class="command-keyword">experience</span>", "<span class="command-keyword">education</span>", "<span class="command-keyword">skills</span>", "<span class="command-keyword">contact</span>" ]',
     about:
       "Hello 👋, I'm Brian, not brain. I like chocolate and don't like carrots.",
     skills:
       'I can hold three eggs in my mouth at the same time. Can you?',
     education:
-      "I learned to eat by myself at the age at 3. Impressive, isn't it?",
+      "I learned to eat by myself at the age of 3. Impressive, isn't it?",
     experience:
       "I wrote \'hello world\' in python, and I felt I have the power in my hand!",
     contact:
