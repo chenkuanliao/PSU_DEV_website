@@ -1,10 +1,30 @@
 var commands = document.getElementById("commands");
-var commandline = document.getElementById("commandline");
-var temp_btn = document.getElementById("temp_btn");
+var user_input = document.getElementById("user_input");
 
-temp_btn.addEventListener("click", function(){
+function execute(){
     var newCommand = document.createElement("li");
-    newCommand.innerHTML = commandline.value;
+    newCommand.innerHTML = user_input.value;
     commands.appendChild(newCommand);
-    commandline.value = "";
-});
+    user_input.value = "";
+}
+
+const key = function keyEvent(e) {
+    user_input = document.getElementById("user_input");
+    const input = window.user_input.innerHTML;
+
+    if (e.key === "Enter") {
+        execute(input);
+        user_input.innerHTML = "";
+        return;
+    }
+
+    user_input.innerHTML = input + e.key;
+    };
+
+
+
+
+
+
+
+document.addEventListener("keypress", key);
