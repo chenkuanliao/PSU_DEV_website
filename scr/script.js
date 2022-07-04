@@ -1,14 +1,15 @@
 var commands = document.getElementById("commands");
 var user_input = document.getElementById("user_input");
 var terminal_outputs = document.getElementById("terminal_outputs");
+var terminal_content = document.getElementById("terminal_content");
 
 function execute(input){
     let output;
     input = input.toLowerCase();
 
-    output = `<div>➜testing input is ${input}</div>`;
+    output = `<div>➜ ${input}</div>`;
     if(!COMMANDS.hasOwnProperty(input)){
-        output += `<div class="output"> No such command ${input} </div>`;
+        output += `<div class="output"> No such command: ${input} </div>`;
     }
     else{
         output += `<div class="output"> ${COMMANDS[input]} </div>`;
@@ -16,6 +17,7 @@ function execute(input){
 
     terminal_outputs.innerHTML = `${terminal_outputs.innerHTML+output}`;
     user_input.value = "";
+    terminal_content.scrollTop = terminal_content.scrollHeight;
 }
 
 const key = function keyEvent(e) {
@@ -45,9 +47,6 @@ const COMMANDS = {
     contact:
       'You can never find me haha'
   };
-
-
-
 
 
 document.addEventListener("keypress", key);
