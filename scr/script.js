@@ -18,6 +18,10 @@ function execute(input){
     terminal_outputs.innerHTML = `${terminal_outputs.innerHTML+output}`;
     user_input.value = "";
     terminal_content.scrollTop = terminal_content.scrollHeight;
+
+    if(input == "website"){
+      setTimeout(() => {  window.open("https://www.youtube.com/watch?v=GBIIQ0kP15E", "_blank"); }, 2000);
+    }
 }
 
 const key = function keyEvent(e) {
@@ -35,7 +39,7 @@ const key = function keyEvent(e) {
 
 const COMMANDS = {
     help:
-      'Supported commands: [ "<span class="command-keyword">about</span>", "<span class="command-keyword">experience</span>", "<span class="command-keyword">education</span>", "<span class="command-keyword">skills</span>", "<span class="command-keyword">contact</span>" ]',
+      'Supported commands: [ "<span class="command-keyword">about</span>", "<span class="command-keyword">experience</span>", "<span class="command-keyword">education</span>", "<span class="command-keyword">skills</span>", "<span class="command-keyword">contact</span>", "<span class="command-keyword">website</span>" ]',
     about:
       "Hello 👋, I'm Brian, not brain. I like chocolate and don't like carrots.",
     skills:
@@ -45,7 +49,9 @@ const COMMANDS = {
     experience:
       "I wrote \'hello world\' in python, and I felt I have the power in my hand!",
     contact:
-      'You can never find me haha'
+      'You can never find me haha',
+    website:
+      'Opening a website that is helpful ...'
   };
 
 
